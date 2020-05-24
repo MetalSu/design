@@ -4,6 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "debug": "^4.1.1",
     "ejs": "^2.6.1",
     "gulp": "^4.0.0",
     "gulp-sass": "^4.0.1",
@@ -11,7 +12,9 @@
     "gulp-webserver": "^0.9.1",
     "http-proxy-middleware": "^0.18.0",
     "koa-views": "^6.1.5",
+    "lodash.template": "^4.5.0",
     "node-sass": "^4.9.2",
+    "open": "^7.0.4",
     "string-loader": "^0.0.1",
     "webpack-stream": "^5.1.0"
   }
