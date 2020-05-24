@@ -1,0 +1,55 @@
+<div class="box">
+
+    <div class="box-header with-border">
+        <h3 class="box-title">
+            <button id="addbtn" class="btn btn-block btn-success"><span class="fa fa-plus"></span> 添加</button>
+        </h3>
+        <div class="box-tools">
+            <div class="input-group input-group-sm" style="width: 150px;">
+                <input type="text" value="" name="pos_search" class="form-control pull-right" placeholder="搜索">
+
+                <div class="input-group-btn">
+                    <button type="button" id="possearch" class="btn btn-default"><i class="fa fa-search"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="box-body">
+        <table class="table table-bordered">
+            <tr>
+                <th style="width: 10px">#</th>
+                <th>员工姓名</th>
+                <th>员工性别</th>
+                <th>职位名称</th>
+                <th>联系方式</th>
+                <th>岗位薪资</th>
+                <th>违纪情况</th>
+                <th>出勤状况</th>
+                <th style="width: 140px">操作</th>
+            </tr>
+
+            {{each data}}
+            <tr>
+                <td>{{$index+1}}</td>
+                <td>{{$value.staffName}}</td>
+                <td>{{$value.staffSex}}</td>
+                <td>{{$value.positionName}}</td>
+                <td>{{$value.staffContact}}</td>
+                <td>{{$value.staffSalary}}</td>
+                <td>{{$value.staffMistake}}</td>
+                <td>{{$value.staffSign}}</td>
+                <td>
+                    <button class="btn btn-sm btn-primary pos-edit" posid="{{$value._id}}"><span
+                            class="fa fa-edit"></span> 修改</button>
+                    <button class="btn btn-sm btn-danger pos-remove" posid="{{$value._id}}"
+                        filename="{{$value.companyLogo}}"><span class="fa fa-remove"></span> 删除</button>
+                </td>
+            </tr>
+            {{/each}}
+            <!-- <tr>
+          <td colspan="8">暂无记录。</td>
+        </tr> -->
+        </table>
+    </div>
+</div>

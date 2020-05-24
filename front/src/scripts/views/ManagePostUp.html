@@ -1,0 +1,77 @@
+<div class="box box-info">
+    <div class="box-header with-border">
+      <h3 class="box-title">人员信息修改</h3>
+    </div>
+    <!-- /.box-header -->
+    <!-- form start -->
+    <form class="form-horizontal" id="possave" action="/api/position" method="post" enctype="multipart/form-data">
+      <div class="box-body">
+        <div class="form-group">
+          <label for="staffName" class="col-sm-2 control-label">员工姓名</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffName}}' type="text" class="form-control" name="staffName" id="companyLogo" placeholder="请输入员工姓名">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="staffSex" class="col-sm-2 control-label">员工性别</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffSex}}' type="text" class="form-control" name="staffSex" id="companyLogo" placeholder="请输入员工性别">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="positionName" class="col-sm-2 control-label">职位名称</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.positionName}}' type="text" class="form-control" name="positionName" id="positionName" placeholder="请输入职位名称">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="staffContact" class="col-sm-2 control-label">联系方式</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffContact}}' type="text" class="form-control" name="staffContact" id="city" placeholder="请输入员工联系方式">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="staffSalary" class="col-sm-2 control-label">岗位薪资</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffSalary}}' type="text" class="form-control" name="staffSalary" id="salary" placeholder="请输入岗位薪资">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="staffMistake" class="col-sm-2 control-label">违纪情况</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffMistake}}' type="text" class="form-control" name="staffMistake" id="type" placeholder="请输入违纪情况">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="staffSign" class="col-sm-2 control-label">出勤状况</label>
+  
+          <div class="col-sm-10">
+            <input value='{{data.staffSign}}' type="text" class="form-control" name="staffSign" id="experience" placeholder="请输入出勤状况">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="remark" class="col-sm-2 control-label">备注</label>
+  
+          <div class="col-sm-10">
+            <textarea rows="8" cols="80" name="remark" class="form-control" id="description" placeholder="请输入备注">{{data.remark}}</textarea>
+          </div>
+        </div>
+      </div>
+      <!-- /.box-body -->
+      <div class="box-footer">
+        <button type="button" id="posback" class="btn btn-default">返回</button>
+        <button from="update" type="button" id="possubmit" class="btn btn-info pull-right">提交</button>
+      </div>
+      <!-- /.box-footer -->
+
+      <!-- 隐藏域 传递id -->
+      <input type="hidden" name='id' value='{{data._id}}'>
+    </form>
+  </div>
+  
