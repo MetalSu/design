@@ -3,7 +3,8 @@ const db = require('../utils/db')
 //创建Schema
 const userSchema = db.Schema({
     username:{type:String,required:true},
-    password:{type:String,required:true}
+    password:{type:String,required:true},
+    rootkey:{type:Boolean,require:false}
 })
 
 //创建集合
@@ -21,7 +22,12 @@ const findOne = data =>{
     return Users.findOne(data)
 }
 
+const root = data=>{
+    let flag =  Users.find(data)
+    return flag
+}
+
 //暴露
 module.exports = {
-    save,findOne
+    save,findOne,root
 }

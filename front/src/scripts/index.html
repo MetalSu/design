@@ -276,8 +276,8 @@ desired effect
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        xx人员管理系统
-        <small id='dateTxt'></small>
+        Page Header
+        <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
@@ -400,24 +400,5 @@ desired effect
 
  <!--引入scripts/app.js-->
  <script src="./scripts/app.js"></script>
- <script>
- $(document).ready(A);
-		function A(){
-			var today = new Date();
-			var h = today.getHours();
-			var m = today.getMinutes();
-			var s = today.getSeconds();
-			m = C(m);
-			s = C(s);
-			$("#dateTxt").html("当前时间为:"+h+":"+m+":"+s)
-			setTimeout('A()',500);
-		}
-		function C(i){
-			if(i<10){
-				i="0"+i;
-			}
-      return i;
-    }
- </script>
 </body>
 </html>

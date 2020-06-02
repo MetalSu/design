@@ -8,4 +8,5 @@ router.post('/del/:id',manageContro.del)
 router.get('/find',manageContro.find)
 router.get('/:id',manageContro.findById)
 router.post('/update',manageContro.update)
+router.post('/search',manageContro.search)
 module.exports= router;

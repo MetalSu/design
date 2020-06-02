@@ -48,6 +48,9 @@ const del = function(data){
 const find = function(){
     return manage.find()
 }
+const search = function(req,res){
+    return manage.find(req)
+}
 //根据传入的id查询
 const findById = function(id){
     return manage.findById(id)
@@ -61,5 +64,5 @@ const findOneAndUpdate = function(id,data){
 
 
 module.exports = {
-    save,find,findById,findOneAndUpdate,del
+    save,find,findById,findOneAndUpdate,del,search
 }

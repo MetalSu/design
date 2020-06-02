@@ -1,4 +1,5 @@
 const usersModel = require('../model/usersModel')
+const manageModel = require('../model/manageModel')
 const jwt = require('jsonwebtoken')
 const fs = require('fs')
 const path = require('path')
@@ -26,6 +27,7 @@ const loginup = async function(req, res, next) {
 
 //登录
 const loginin = async function(req, res, next) {
+    console.log(req.body)
     let flag = await usersModel.findOne(req.body)
     if(flag){
         //存在
@@ -59,7 +61,42 @@ function getToken(data){
     return token
 }
 
+//验证用户身份
+const isloginin = async function(req,res){
+    //获取前端请求头上的token
+    let token = req.header("X-Access-Token")
+    let cert = fs.readFileSync(path.resolve(__dirname,'../keys/public.key'))
+    //进行公钥解密
+    jwt.verify(token,cert,function(err,decoded){
+        if(!err){
+            res.render("api.success.ejs",{
+                data:JSON.stringify({username:decoded.username})
+            })
+        }else{
+            res.render("api.fail.ejs",{
+                data:'验证失败'
+            })
+        }
+    })
+}
+const isRoot = async function(req,res){
+    const name = {}
+    name['username'] = req.body.username
+    let flag = await usersModel.root(name)
+    const rootkey = flag[0].rootkey ? flag[0].rootkey : false 
+    if(flag){
+        //存在
+        res.render("api.success.ejs",{
+            data:rootkey
+        })
+    }else{
+        //不存在
+         res.render("api.fail.ejs",{
+            data:rootkey
+        }) 
+    }
+}
 
 module.exports = {
-    loginup,loginin
+    loginup,loginin,isloginin,isRoot
 }

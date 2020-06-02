@@ -1,0 +1,14 @@
+<div class="pull-left image">
+    <img src="./static/images/1.jpg" class="img-circle" alt="User Image">
+  </div>
+  <div class="pull-left info">
+    {{if isSignin}}
+    <p>{{greeting}}</p>
+    <!-- Status -->
+    <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+    {{else}}
+    <p>未登录</p>
+    <!-- Status -->
+    <a href="#"><i class="fa fa-circle text-success"></i> off-line</a>
+    {{/if}}
+</div>
